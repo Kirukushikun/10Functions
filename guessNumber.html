@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body style="height: 100vh;">
+
+    <div class="container">
+
+        <div class="parent">
+
+            <div class="child">
+                <p id="result"></p>
+                <input type="text" id="input" placeholder="Choose a number between 1 to 10">                
+                <p id="result2"></p>
+                <button id="btn2" onclick="playGuessingGame()">Roll</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+<script>
+
+    function generateRandomNumber() {
+        return Math.floor(Math.random() * 10) + 1;
+    }
+
+    function playGuessingGame() {
+        let userGuess = document.getElementById("input");
+        userGuess = parseInt(userGuess.value);
+        
+        const randomNumber = generateRandomNumber();
+
+        if(userGuess >= 1 && userGuess <= 10){
+            const result = checkGuess(userGuess, randomNumber);
+            document.getElementById("result").innerHTML = randomNumber;
+            document.getElementById("result2").innerHTML = result;
+        }else{
+            document.getElementById("result2").innerHTML = "Please input only a number between 1 and 10";
+            document.getElementById("result").innerHTML = "";
+        }
+    }
+
+    function checkGuess(userGuess, randomNumber) {
+        if (userGuess === randomNumber) {
+            return "Congratulations! You guessed the correct number!";
+        } else {
+            return "Sorry, that's not the right number. Try again!";
+        }
+    }
+</script>  
+</body>
+</html>

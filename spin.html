@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Machine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+
+
+</head>
+<body style="height: 100vh;">
+
+    <div class="container">
+        <div class="parent">
+            <div class="child">
+                <div class="container2">
+                    <div class="block" id="block1"></div>
+                    <div class="block" id="block2"></div>
+                    <div class="block" id="block3"></div>
+                </div>
+
+                <button onclick="spin()" id="spin">Spin</button>
+
+                <p class="result" id="result"></p>                
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function spin() {
+            const colors = ['#dc3545', '#28a745', '#54B4D3'];
+            const block1 = document.getElementById('block1');
+            const block2 = document.getElementById('block2');
+            const block3 = document.getElementById('block3');
+            const resultElement = document.getElementById('result');
+
+            const randomColor1 = getRandomColor(colors);
+            const randomColor2 = getRandomColor(colors);
+            const randomColor3 = getRandomColor(colors);
+
+            block1.style.backgroundColor = randomColor1;
+            block2.style.backgroundColor = randomColor2;
+            block3.style.backgroundColor = randomColor3;
+
+            if (randomColor1 === randomColor2 && randomColor2 === randomColor3) {
+                resultElement.textContent = 'You won!';
+            } else {
+                resultElement.textContent = 'Try again!';
+            }
+        }
+
+        function getRandomColor(colors) {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            return colors[randomIndex];
+        }
+    </script>
+
+</body>
+</html>

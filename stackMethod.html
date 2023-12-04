@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Block</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+        .parent{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stack-container {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .block{
+            width: 320px;
+            height: 50px;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 16px;
+            color: white;
+            border-radius: 15px;
+        }
+        .block-red { background-color: #dc3545; }
+        .block-green { background-color: #28a745; }
+        .block-blue { background-color: #54B4D3; }
+
+    </style>
+</head>
+<body style="height: 100vh;">
+
+    <div class="container">
+
+        <div class="parent">
+            <div class="stack-container" id="stackContainer"> -
+            </div>
+
+            <div class="child">
+                <button onclick="pushBlock('red')" id="red">Red Block</button>
+                <button onclick="pushBlock('green')" id="green">Green Block</button>
+                <button onclick="pushBlock('blue')" id="blue">Blue Block</button>
+                <button onclick="popBlock()" id="pop">Pop Block</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        function Stack(){
+            this.items = []
+        }
+
+        Stack.prototype.push = function (item){
+            this.items.push(item);
+            this.updateView();
+        };
+
+        Stack.prototype.pop = function(){
+            if(this.items.length === 0){
+                document.getElementById("stackContainer").innerHTML = ("Stack is Empty");
+                return null;
+            }
+            const poppedItem = this.items.pop();
+            this.updateView();
+            return poppedItem;
+        };
+
+        Stack.prototype.updateView = function(){
+            const stackContainer = document.getElementById("stackContainer");
+            stackContainer.innerHTML = "";
+            this.items.forEach(item => {
+                const block = document.createElement("div");
+                block.className = `block block-${item}`;
+                block.textContent = item;
+                stackContainer.appendChild(block);
+            })
+        };
+
+        const blockStack = new Stack();
+
+        function pushBlock(color){
+            blockStack.push(color);
+        }
+
+        function popBlock(){
+            blockStack.pop();
+        }
+
+    </script>
+
+</body>
+</html>

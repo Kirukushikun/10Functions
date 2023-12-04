@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+        .container-fluid{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 700px;
+        }
+
+        .parent{
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease-in-out;
+        }.parent:hover{
+            transform: scale(1.1);
+        }
+
+        .child{
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#00ffc5;
+        }.child:hover{
+            background-color:#ec008c;
+        }.child:hover a{
+            color: white;
+        }
+
+        a{
+            text-decoration: none;
+            color: #1b1464;
+            font-size: 15px;
+        }
+
+
+
+    </style>
+</head>
+<body style="height: 100vh; background-color: #1b1464; font-family:'Overpass Mono';font-size: 30px;">
+
+    <div class="container-fluid">
+
+        <h1 style="color: white; margin-bottom: 5px; margin-top: 10px;">JavaScript</h1>
+
+        <div class="parent">
+            <div class="child">
+                <a href="colorMix.html">Color Mix</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="incream.html">Operation 2.0</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="stackMethod.html">Stack</a>
+            </div>
+        </div>
+
+
+        <div class="parent">
+            <div class="child">
+                <a href="loadingSystem.html">Processing</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="spin.html">Slot Machine</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="dateAndTime.html">Date and Time</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="draw.html">Quote Generate</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="guessNumber.html">Guess the Number</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="oddOrEven.html">Odd or Even</a>
+            </div>
+        </div>
+
+        <div class="parent">
+            <div class="child">
+                <a href="charCount.html">Character Count</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Color Mix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="parent">
+
+            <div class="child">
+                <p id="display"></p>
+                <button onclick="task1()" id="process">Click to Process</button>
+            </div>
+
+        </div>        
+    </div>
+
+    <script>
+        function task1(){
+            document.getElementById("display").innerHTML = "Task 1 Processing"
+            setTimeout(task1one, 3000);
+            document.getElementById("process").disabled = true;
+        }
+        function task1one(){
+            document.getElementById("display").innerHTML = "Task 1 Complete"
+            setTimeout(task2, 3000)
+        }
+        function task2(){
+            document.getElementById("display").innerHTML = "Task 2 Processing"
+            setTimeout(task2one, 3000);
+        }
+        function task2one(){
+            document.getElementById("display").innerHTML = "Task 2 Complete"
+            setTimeout(task3, 3000)
+        }
+        function task3(){
+            document.getElementById("display").innerHTML = "Task 3 Processing"
+            setTimeout(task3one, 3000);
+        }
+        function task3one(){
+            document.getElementById("display").innerHTML = "Task 3 Processing"
+            setTimeout(taskDone, 3000);
+        }
+        function taskDone(){
+            document.getElementById("display").innerHTML = "All Task Done!"
+            document.getElementById("process").disabled = false;
+        }    
+
+    </script>
+
+</body>
+</html>

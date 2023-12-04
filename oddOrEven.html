@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="parent">
+
+            <div class="child">
+                <p id="result3"></p>
+                <input type="text" id="input" placeholder="Please enter a number">
+                <br>
+                <button onclick="oddOrEven()" id="btn3">Check</button>                
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+
+        function oddOrEven(){
+            let number = document.getElementById("input");
+            number = parseInt(number.value);
+
+            if(!isNaN(number)){
+                if(number % 2 == 0){
+                    document.getElementById("result3").innerHTML = "That is an Even number!"
+                } else{
+                    document.getElementById("result3").innerHTML = "That is an Odd number!"
+                }
+            } else {
+                document.getElementById("result3").innerHTML = "Please enter a number!"
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

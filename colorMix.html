@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mix</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+
+
+        .parent{
+            border-style: solid;
+            width: 500px;
+            height: 300px;
+        }
+
+    </style>
+</head>
+<body style="height:100vh;">
+
+    
+
+    <div class="container" id="background">
+        <div class="parent">
+
+            <div class="child">
+                <p>Mix two primary colors</p>
+                <select id="fColor" class="txtBox">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                </select>
+                <select id="sColor" class="txtBox">
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                </select>
+                <br>
+                <button onclick="mix()" id="btn1">Mix</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let btnMix = document.getElementById("btn1");
+
+        function mix(){
+            let fColor = document.getElementById("fColor").value;
+            let sColor = document.getElementById("sColor").value;
+
+            if(fColor === "blue" && sColor === "red" || fColor == "red" && sColor == "blue"){
+                console.log("violet");
+                document.getElementById("background").style.backgroundColor = "#641460";
+            } else if (fColor === "blue" && sColor === "green" || fColor == "green" && sColor == "blue"){
+                document.getElementById("background").style.backgroundColor = "#146460";
+            } else if (fColor === "red" && sColor === "green" || fColor == "green" && sColor == "red"){
+                document.getElementById("background").style.backgroundColor = "#636414";
+            } else if (fColor === "blue" && sColor === "blue" || fColor == "blue" && sColor == "blue"){
+                document.getElementById("background").style.backgroundColor = "#141964";
+            } else if (fColor === "red" && sColor === "red" || fColor == "red" && sColor == "red"){
+                document.getElementById("background").style.backgroundColor = "#641414";
+            } else if (fColor === "green" && sColor === "green" || fColor == "green" && sColor == "green"){
+                document.getElementById("background").style.backgroundColor = "#146421";
+            }
+        };
+
+    </script>
+
+
+    
+
+
+</body>
+</html>

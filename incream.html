@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+
+    </style>
+</head>
+<body style="height: 100vh">
+    
+    <div class="container">
+
+        <div class="parent">
+
+            <div class="child">                
+                <input type="text" id="display" class="txtBox">
+                <br>
+                <button onclick="operation1()" id="add" onmouseover="add()" onmouseout="addd()">+</button>
+                <button onclick="operation2()" id="sub" onmouseover="sub()" onmouseout="subb()">-</button>
+                <button onclick="operation3()" id="mul" onmouseover="mul()" onmouseout="mull()">*</button>
+                <button onclick="operation4()" id="div" onmouseover="div()" onmouseout="divv()">/</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("display").value = "0";
+        function operation1(){
+            let intValue = document.getElementById("display");
+            let resValue = parseInt(intValue.value) + 1;
+            document.getElementById("display").value = resValue;
+        }function operation2(){
+            let intValue = document.getElementById("display");
+            let resValue = parseInt(intValue.value) - 2;
+            document.getElementById("display").value = resValue;
+        }function operation3(){
+            let intValue = document.getElementById("display");
+            let resValue = parseInt(intValue.value) * 3;
+            document.getElementById("display").value = resValue;
+        }function operation4(){
+            let intValue = document.getElementById("display");
+            let resValue = parseInt(intValue.value) / 4;
+            document.getElementById("display").value = resValue;
+        }
+
+        function add(){
+            document.getElementById("add").innerHTML = "+1"
+        }function addd(){
+            document.getElementById("add").innerHTML = "+"
+        }
+
+        function sub(){
+            document.getElementById("sub").innerHTML = "-2"
+        }function subb(){
+            document.getElementById("sub").innerHTML = "-"
+        }
+
+        function mul(){
+            document.getElementById("mul").innerHTML = "*3"
+        }function mull(){
+            document.getElementById("mul").innerHTML = "*"
+        }
+
+        function div(){
+            document.getElementById("div").innerHTML = "/4"
+        }function divv(){
+            document.getElementById("div").innerHTML = "/"
+        }
+    </script>
+
+</body>
+</html>
